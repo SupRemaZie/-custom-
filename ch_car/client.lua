@@ -9,6 +9,7 @@ RegisterCommand('car',function (source, args)
     if not IsModelInCdimage(vehicleName) or not IsModelAVehicle(vehicleName) then
         TriggerEvent('chat:open')
         TriggerEvent('chat:addMessage', {
+            color= {255,0,0},
             args = {'Seems that ' .. vehicleName .. ' is not a valid vehicle'}
            
         })
@@ -24,6 +25,8 @@ RegisterCommand('car',function (source, args)
 
     local createdVehicle = CreateVehicle(vehicleName, pos.x, pos.y, pos.z, heading)
     SetPedIntoVehicle(playerPed,createdVehicle, -1)
+
+    SetModelAsNoLongerNeeded(vehicleName)
 end)
 
 
