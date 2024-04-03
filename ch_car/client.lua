@@ -1,0 +1,30 @@
+RegisterCommand('car',function (source, args)
+
+    local vehicleName = args[1] or 'adder'
+    local playerId = source
+    local playerPed = PlayerPedId()
+    local pos       = GetEntityCoords(playerPed)
+    local heading   = GetEntityHeading(playerPed)
+
+    if not IsModelInCdimage(vehicleName) or not IsModelAVehicle(vehicleName) then
+        TriggerEvent('chat:open')
+        TriggerEvent('chat:addMessage', {
+            args = {'Seems that ' .. vehicleName .. ' is not a valid vehicle'}
+           
+        })
+        
+        return
+    end
+
+    RequestModel(vehicleName)
+
+    while not HasModelLoaded(vehicleName) do
+        Wait(10)
+    end
+
+    local createdVehicle = CreateVehicle(vehicleName, pos.x, pos.y, pos.z, heading)
+    SetPedIntoVehicle(playerPed,createdVehicle, -1)
+end)
+
+
+
