@@ -11,6 +11,7 @@ RegisterCommand('car',function (source, args)
         TriggerEvent('chat:addMessage', {
             color= {255,0,0},
             args = {'Seems that ' .. vehicleName .. ' is not a valid vehicle'}
+
            
         })
         
@@ -28,6 +29,23 @@ RegisterCommand('car',function (source, args)
 
     SetModelAsNoLongerNeeded(vehicleName)
 end)
+local playerPed = PlayerPedId()
+local playerVeh = GetVehiclePedIsIn(playerPed, false)
+Citizen.CreateThread(function()
+    TriggerEvent('chat:addMessage', {
+        color= {255,0,0},
+        args = {'Appuyez E pour demander ouvrir le menu.'}
+    })
+    local var = true
 
+    while true do
+        SendNUIMessage({
+            hello = "world",
+            action = "showMessage"
+        })
+    end
+
+    
+end)
 
 

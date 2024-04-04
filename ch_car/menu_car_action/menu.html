@@ -4,13 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="menu.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="car_event.js"></script>
 </head>
 <body>
-    <div class="container">
-        <div class="menu">
-            <div class = "menu-item" id="menu-item-1" onclick="car_event('menu-item-1')">deleteCar</div>
+    <div class="menu">
+        <div id="menu-title">Menu</div>
+
+        <div id="menu-items">
+            <div class="menu-item"onclick="deleteCar()">delete car</div>
         </div>
+    </div>
+
     </div>
 </body>
 </html>

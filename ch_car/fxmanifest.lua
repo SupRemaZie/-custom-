@@ -14,7 +14,9 @@ ui_page 'menu_car_action/menu.html'
 
 files {
     'menu_car_action/menu.html',
-    'menu_car_action/menu.css'
+    'menu_car_action/menu.css',
+    'menu_car_action/car_event.js',
+
 }
 
 

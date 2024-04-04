@@ -1,0 +1,12 @@
+{
+   
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "FIVEM",
+            "type": "shell",
+            "command": "cd C:/Users/dporc/FxServer/artifact/txData/CFXDefaultFiveM_047523.base; C:/Users/dporc/FxServer/artifact/server/FXServer.exe +exec server.cfg",
+            "problemMatcher": []
+        }
+    ]
+}
